@@ -15,7 +15,7 @@ userForm.loginFormCallback = function() {
 
 userForm.registerFormCallback = function() {
 
-  const data = userForm.getData(this.loginForm);
+  const data = userForm.getData(this.registerForm);
   
   ApiConnector.register(data, response => {
     if (response.success !== true) return this.setRegisterErrorMessage('Ошибка регистрации');
