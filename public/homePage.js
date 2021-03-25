@@ -2,6 +2,7 @@
 
 const logout = new LogoutButton();
 
+// logout
 logout.action = () => {
   ApiConnector.logout(response => {
     if (response.success !== true) return;
@@ -10,11 +11,13 @@ logout.action = () => {
   });
 };
 
+// profileInfo
 ApiConnector.current(response => {
   if (response.success !== true) return;
   return ProfileWidget.showProfile(response.data);
 });
 
+// ratesBoard
 const ratesBoard = new RatesBoard();
 
 ratesBoard.getRates = function() {
@@ -27,3 +30,5 @@ ratesBoard.getRates = function() {
 
   ratesBoard.getRates();
   const refreshRatesTimer = setInterval(ratesBoard.getRates(), 60000);
+
+// moneyOperations
