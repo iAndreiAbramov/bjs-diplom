@@ -9,7 +9,6 @@ userForm.loginFormCallback = function() {
     ApiConnector.login(data, response => {
       if (response.success !== true) return this.setLoginErrorMessage(response.error);
       location.reload();
-      return response;
     });
 };
 
@@ -20,7 +19,6 @@ userForm.registerFormCallback = function() {
   ApiConnector.register(data, response => {
     if (response.success !== true) return this.setRegisterErrorMessage(response.error);
     location.reload();
-    return response;
   });
 };
 
